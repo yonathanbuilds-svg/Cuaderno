@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://haveibeenpwned.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><meta name="description" content="Practica el siguiente paso ante un posible uso indebido de identidad, con rutas oficiales mexicanas y casos ficticios.">
+<title>Después de la alerta · Semana 8</title><link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23132c3e'/%3E%3Cpath d='M8 16h15m-6-6 6 6-6 6' fill='none' stroke='%23f3c36b' stroke-width='3'/%3E%3C/svg%3E"></head>
+<body><a class="skip" href="#main">Ir a la práctica</a>
+<header><a class="brand" href="./" aria-label="Después de la alerta, inicio"><span class="mark">↗</span> Después de la alerta</a><span class="small-label">WEEK 08 · TEAM 6</span></header>
+<main id="main"><div class="intro"><p class="eyebrow">CASOS FICTICIOS · DEMO ACADÉMICA</p><h1>Una señal no es un veredicto.</h1><p>Practica cómo elegir el siguiente paso ante un posible uso indebido de identidad. Sin subir documentos ni compartir claves.</p></div>
+<div class="workspace"><section class="choices" aria-labelledby="choose"><h2 id="choose"><span class="num">01</span> ¿Qué pasó?</h2><p class="muted">Elige una situación inventada. No ingreses información real.</p>
+<fieldset id="cases"><legend class="sr">Situación ficticia</legend>
+<label class="choice"><input type="radio" name="case" value="financial" checked><span><strong>Un crédito que no reconozco</strong><small>Producto o movimiento financiero</small></span><span aria-hidden="true">→</span></label>
+<label class="choice"><input type="radio" name="case" value="fiscal"><span><strong>Una factura que no reconozco</strong><small>Cierre mensual · dueño y contador</small></span><span aria-hidden="true">→</span></label>
+<label class="choice"><input type="radio" name="case" value="alert"><span><strong>Solo recibí una alerta</strong><small>Sin acto desconocido identificado</small></span><span aria-hidden="true">→</span></label></fieldset>
+<div class="signal"><label for="evidence">Simula un resultado (no buscamos tu identidad)</label><select id="evidence"><option value="failed">No se pudo comprobar</option><option value="missing">No encontrado en esta prueba</option><option value="confirmed">Coincidencia confirmada · ficticia</option></select><p id="stateDescription" class="muted"></p></div>
+<div class="privacy"><span aria-hidden="true">◇</span><div><strong>Tu identidad queda fuera.</strong><p>No recopilamos CURP, biométricos, cuentas ni archivos de e.firma. Los cambios solo duran en esta página.</p></div></div>
+<details class="api-panel"><summary>Dato público de filtraciones <span>Opcional</span></summary><p>Consulta real del catálogo público de HIBP. Describe un incidente publicado; <strong>no busca tu correo ni demuestra que tus datos estén en él.</strong></p><button id="catalog" class="secondary">Consultar catálogo público</button><p id="catalogStatus" role="status">Todavía no consultado.</p><a href="https://haveibeenpwned.com/API/v3" target="_blank" rel="noopener noreferrer">Ver documentación de HIBP ↗</a></details>
+</section>
+<section class="card" aria-labelledby="cardHeading"><div class="card-top"><p class="eyebrow">02 · TARJETA DE SIGUIENTES PASOS</p><div class="toolbar"><button id="reset" class="text-button">Reiniciar</button><button id="print" class="text-button">Imprimir ↗</button></div></div>
+<div id="result" aria-live="polite" aria-atomic="true"></div>
+<div class="assist"><button id="explain" class="secondary">Explícamelo más sencillo</button><p class="ai-label">IA simulada · explicación preescrita y revisada. No hay consulta a un modelo en vivo.</p><p id="explanation" hidden></p></div>
+<div class="human"><p class="eyebrow">UN SIGUIENTE PASO CON UNA PERSONA</p><p id="humanText"></p><p class="muted">Esta demo no tiene un asesor financiado que acepte tu caso. Ofrece orientación de autoservicio hacia instituciones; no promete recuperación ni respuesta humana garantizada.</p></div>
+<p id="actionFeedback" class="muted" role="status"></p></section></div>
+<section class="boundaries"><h2>Qué demuestra esta práctica</h2><p>Una ruta y un estado de evidencia bien separados. No confirma una filtración, no determina fraude y no realiza trámites. Las fuentes pueden cambiar; revisa siempre el canal oficial. Sin pagador comprometido ni prueba con usuarios reales, esto es una demo, no un negocio validado.</p></section>
+</main><footer><span>Yonathan Zeitoune Mattout · ADVERSARY · Team 6</span><span>Sin datos personales · Sin almacenamiento · Sin promesas de recuperación</span></footer><script type="module" src="app.mjs"></script></body></html>
