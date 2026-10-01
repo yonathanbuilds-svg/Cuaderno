@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {routeCase,safeUrl,STATES,CASES} from '../dist/rules.mjs';
+const stable=new Date('2026-10-01T00:00:00Z');
+test('nine case/state combinations retain qualified evidence and correct institution',()=>{for(const c of Object.keys(CASES))for(const s of Object.keys(STATES)){const r=routeCase(c,s,stable);assert.equal(r.state,STATES[s]);assert.equal(r.steps.length,3);assert.ok(safeUrl(r.route));assert.ok(safeUrl(r.source));assert.equal(r.stale,false);}assert.match(routeCase('financial','failed',stable).institution,/CONDUSEF/);assert.match(routeCase('fiscal','missing',stable).institution,/SAT/);});
+test('unexpected fields cannot select prototype properties or inject routes',()=>{for(const bad of ['__proto__','constructor','<script>']){assert.throws(()=>routeCase(bad,'failed',stable));assert.throws(()=>routeCase('financial',bad,stable));}});
+test('exact destination allowlist rejects phishing, credentials and wrong protocol',()=>{for(const bad of ['http://www.sat.gob.mx','https://www.sat.gob.mx.attacker.example/','https://attacker.example/?next=https://www.sat.gob.mx','javascript:alert(1)','https://user:pass@www.sat.gob.mx/'])assert.equal(safeUrl(bad),null);assert.ok(safeUrl('https://www.sat.gob.mx/'));});
+test('expired sources suppress detailed procedural guidance',()=>{const r=routeCase('fiscal','confirmed',new Date('2026-11-02T00:00:00Z'));assert.equal(r.stale,true);assert.match(r.steps[0],/nueva revisión/);assert.equal(r.steps.some(x=>x.includes('revocación')),false);});
+test('printed result contains the coverage disclaimer',()=>{const app=readFileSync(new URL('../dist/app.mjs',import.meta.url),'utf8');assert.match(app,/result\.append\([^;]*c\.state\.description/,'Printed card loses the evidence disclaimer inside the hidden choices panel');});
+test('no personal fields or persistence introduced',()=>{const html=readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');const app=readFileSync(new URL('../dist/app.mjs',import.meta.url),'utf8');assert.doesNotMatch(html,/<input[^>]+type=["'](?:text|email|file|password)/);assert.doesNotMatch(app,/localStorage|sessionStorage|document\.cookie/);assert.match(app,/credentials:'omit'/);});
