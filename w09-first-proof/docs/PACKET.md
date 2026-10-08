@@ -9,7 +9,7 @@ An entry-level operations applicant can have useful judgment without a formal wo
 Provisional segment: a Spanish-speaking applicant seeking a first operations/inventory role at a small Mexican retailer. This is a segment hypothesis, not an interviewed person. The employer reviewer is a second actor. Replace with the actual User brief before finalizing the packet or persona.
 
 ## Success definition
-The team chose First-proof.  before the module closes a live demo should let a visitor complete one invented inventory task, see source-linked numerical checks, declare AI assistance, receive limited LLM feedback, revise an answer, and export the work sample for human discussion. Every screen must identify the task as a simulation and the card as unverified by an employer. No hiring decision is made.
+The team chose First-proof. Before the module closes a live demo should let a visitor complete one invented inventory task, see source-linked numerical checks, declare AI assistance, receive explicitly simulated AI suggestions, revise an answer, and export the work sample for human discussion. Every screen must identify the task as a simulation and the card as unverified by an employer. No hiring decision is made.
 
 ## Screen and image-generated mockup
 Spanish mobile-first task: show DEMO-01 through DEMO-04, cartons, units per carton, and requested units. Ask for discrepancy, missing evidence, and next action. The output separates 'Comprobaciones numéricas', 'Sugerencia de IA' and 'Revisión humana pendiente'. Generate the mockup before application code and retain the image in the packet deliverables. It is concept art, not a product screenshot.
@@ -63,17 +63,17 @@ No CV builder, job board, universal employability score, candidate ranking, hiri
 ## Architecture and proposed stack
 | Layer | Proposed implementation | Evidence boundary |
 |---|---|---|
-| UI | Buildless HTML/CSS/JavaScript, Spanish forms (framework deviation disclosed) | Demo; not yet implemented |
+| UI | Buildless HTML/CSS/JavaScript, Spanish forms (framework deviation disclosed) | Planned demo at packet timestamp |
 | Structured data | Invented typed JSON cases, versioned rubric and source IDs | No real company records |
 | Numerical checks | Deterministic carton-to-unit validation | Arithmetic consistency, not authorship |
 | LLM | Model-drafted prerecorded suggestions, explicitly simulated; no live API calls | Live LLM integration not implemented; suggestions cannot certify capability |
 | Third stack element | Export automation: facts, answer, revisions, AI-use declaration | Export is an unverified work sample |
-| Hosting/source | Vercel production and public Cuaderno/w09-first-proof source, to be verified after deployment | No live URL or repo yet |
+| Hosting/source | Vercel production and public Cuaderno/w09-first-proof source, to be verified after deployment | Packet committed before code; deployment verification pending |
 | Personal data | Excluded from first demo | Any later personal storage requires auth and RLS |
 
 Dragon floor is not yet satisfied by a deployed product. A research script and this planning conversation do not substitute for an application LLM integration.
 
-## Proposed conditions for the team to accept or reject
+## Team conditions
 1. Keep simulation completion, numerical checks, human observation and employer acceptance as separate states.
 2. No universal score or automatic exclusion; missing data opens a correction path.
 3. Employer reviewer commitment must exist before claiming the record unlocks an opportunity.
@@ -81,7 +81,7 @@ Dragon floor is not yet satisfied by a deployed product. A research script and t
 5. Shadow clause: preserve dignity and control through visible criteria, access to one's artifact, correction and a human explanation; no productive unpaid work.
 6. Use invented data and validated forms; label every unimplemented or simulated integration.
 
-These are proposed conditions, not Team 6's decisions. Add the approved conditions and an implementation mapping before code.
+The supplied Blueprint is the authoritative team decision; its six conditions are mapped below.
 
 ## Test plan after Blueprint
 Mechanical: validate empty and over-length reasoning, negative/fractional counts, missing packing, stale results after editing, explicit AI-use declaration, exported uncertainty labels and mobile layout. Record actual expected/observed results. When a real bug is discovered, preserve before evidence, fix, and redeploy; do not invent a defect to satisfy the checklist.
@@ -104,3 +104,8 @@ Personal notes remain in browser memory only; export is an explicit local action
 
 ## Session close
 Packet and build prompt finalized after receiving the Blueprint. Next: implement, commit the working slice, deploy, find real defects, repair, redeploy and retest. No interview, employer commitment or personal video is claimed.
+
+## Post-build evidence (appended after implementation)
+Public GitHub source exists; nine meaningful commits preceded this log. Sites published two owner-private versions successfully. Vercel failed with 403. Owner-private URL: https://primera-prueba-semana9.yonazet.chatgpt.site. This is not a teacher-accessible public URL. See TEST_RESULTS.md for exact IDs, real handler defect, repair and passing tests. Browser persona/screenshots, live LLM, personal debate and videos remain missing.
+
+The generated concept mockup predates code. Its implied reviewer promise is NOT implemented: actual UI explicitly states no reviewer commitment. It is concept art, never a screenshot.
