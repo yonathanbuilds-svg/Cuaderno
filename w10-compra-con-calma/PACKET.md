@@ -25,7 +25,7 @@ Regret prevention. A narrow, explainable pre-purchase check can demonstrate an a
 This slice uses deterministic browser code, not a live AI agent or vision model. It cannot extract dimensions or prices from an image, establish a product's quality, read a bank account, verify a retailer quote or observe future regret. A file/image upload that does nothing would misrepresent vision, so it is cut. A future vision proposal must return field-level source crops, allow correction, abstain on unreadable fields and test against manual entry before shipping. The Week 10 mockup is AI-generated; that does not make the application inference AI-powered.
 
 ## AI-generated mockup
-The requested image is generated before implementation. Design: ivory background, forest green headings, two-column buyer checklist, clearly separated unknowns and conflicts. Store the returned concept in docs/mockup.png when the image tool provides a reusable local path. If the tool provides only an inline image, the reference remains attached to the actual build conversation; report that packaging limitation rather than inventing a path.
+The requested image was generated before application implementation and is preserved in docs/mockup.png. Design: ivory background, forest green headings, two-column buyer checklist, clearly separated unknowns and conflicts. The concept image contains euro examples; the implementation uses MXN and removes generic wellbeing language. The image is a design reference, not a tested app screenshot.
 
 ## Flow
 ```mermaid
