@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');const {review}=require('./dist/engine.js');
-const base={cash:'2800',delivery:'350',budget:'3000',width:'160',space:'150',terms:'checked',mode:'cash'};
+const base={cash:'2800',delivery:'350',budget:'3000',width:'160',space:'150',terms:'checked',debts:'checked',fit:'checked',mode:'cash'};
 let n=0;function test(name,fn){try{fn();console.log('PASS '+name);n++;}catch(e){console.error('FAIL '+name+': '+e.message);process.exitCode=1;}}
 test('T01 cash totals include delivery',()=>{const r=review(base);assert.equal(r.total,315000);assert.equal(r.conflicts[0].value,15000);});
 test('T02 blank delivery is unknown',()=>{const r=review({...base,delivery:''});assert.equal(r.total,null);assert(r.missing.includes('Envío y cargos adicionales'));});
@@ -13,4 +13,7 @@ test('T09 cents arithmetic',()=>assert.equal(review({...base,cash:'0.10',deliver
 test('T10 complete limited checks',()=>assert.equal(review({...base,budget:'4000',space:'200'}).status,'clear'));
 test('T11 reject nondecimal and fractional cents',()=>{for(const cash of ['0x10','1e3','1.001'])assert.throws(()=>review({...base,cash}));});
 test('T12 reject unsupported payment mode',()=>assert.throws(()=>review({...base,mode:'unknown'})));
+test('T13 unknown other debts never clears',()=>{const r=review({...base,budget:'4000',space:'200',debts:'unknown'});assert.equal(r.status,'missing');assert.match(r.verdict,/No puedo determinarlo/);});
+test('T14 width alone does not establish full fit',()=>assert.equal(review({...base,budget:'4000',space:'200',fit:'unknown'}).status,'missing'));
+test('T15 known conflict preserves independent unknowns',()=>{const r=review({...base,debts:'unknown'});assert.equal(r.status,'conflict');assert(r.missing.length>0);assert.match(r.verdict,/No puedo determinarlo/);});
 console.log(n+' checks passed.');
