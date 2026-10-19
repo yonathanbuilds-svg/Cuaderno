@@ -11,3 +11,6 @@ Synthetic persona inspection: adult CDMX renter, desk purchase, self-set total b
 Worst wording risk found by inspecting the output copy: 'REVISIÓN PARCIAL COMPLETA' could be read as a broader approval. Replaced with 'COSTO Y ANCHO REVISADOS'. Reinspection confirms title names the narrow checks and adjacent text explicitly says it does not recommend buying. Repeat complete-data case returns clear only within the declared checks; removing delivery returns missing. This is a synthetic text/code inspection and engine retest, not browser persona QA.
 
 Remaining verification: actual browser interactions, mobile screenshot walkthrough, download/reset UX, a new vision feature if required, team Blueprint conditions, public access and the student's DEMO/reflection.
+
+## 18 October - Blueprint regression
+The original 12 checks still pass. T13: unknown other debts keeps missing status and an explicit No puedo determinarlo verdict. T14: width alone leaves full fit unresolved. T15: an existing known conflict preserves the independent missing information and non-determinability verdict. 15 actual Node checks pass. No real-buyer pilot or browser screenshot walkthrough was performed.
