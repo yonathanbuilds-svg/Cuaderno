@@ -3,7 +3,7 @@
 Yonathan Zeitoune Mattout | Team 6 | ADVERSARY | 14 October 2026
 
 ## Status and evidence boundary
-Prepared before application implementation. This is an individual proposed slice. The Week 10 team Blueprint and meeting recording have not been supplied, so no team approval, vote, dissent, participation or alignment is claimed. Reconcile with the actual Blueprint before final submission. The source chapter and complete Manifesto/Charter stack still need to be read by the student; the chapter connection below uses the course's Crystal Ball synopsis, not invented quotations or a claimed reading session.
+Original packet committed 14 October before code. Team 6 Blueprint supplied on 18 October 2026 confirms Regret prevention as the primary vacuum and assigns Yonathan Compra con calma: delivered-cost/installment check and one measured furniture width, honoring Condition 2. This revision maps the actual team conditions below. Receipt of a written Blueprint does not establish attendance or receipt of the meeting recording. The student's reading/chat and videos remain separate requirements. Background numerical and legal claims in the team document are not independently verified or adopted as product claims here.
 
 ## Problem, user and success
 A shopper considering a small furniture purchase can see an attractive installment but miss delivery, total payable or a physical mismatch. Our exact synthetic user is a Spanish-speaking CDMX renter checking a desk or sofa against a self-declared purchase budget and available width. These are scenario assumptions, not interview findings.
@@ -13,13 +13,18 @@ Success: enter a quote, delivery and financing totals, available purchase budget
 ## Chosen vacuum
 Regret prevention. A narrow, explainable pre-purchase check can demonstrate an avoided mismatch without claiming to optimize a person's life. Physical compatibility and arithmetic are separable from subjective desire. No store, sales recommendations or paid ranking.
 
-## Provisional adversary conditions (not a team Blueprint)
-1. Incomplete values remain unknown. Unknown delivery is not zero. Missing evidence must not produce an all-clear.
-2. The user sets and can revise limits. The app cannot spend money, veto a purchase or infer needs from sensitive traits.
-3. Show total payable, cash comparison and source status separately. A quoted monthly amount is not the total cost.
-4. No merchant commissions, referral links, selling user data or paid placement in this prototype.
-5. Shadow clause: optimization must not become coercion. Show reasons, correction and exit, with no happiness score or automatic action.
-6. Use synthetic examples only. No account, backend, analytics, persistent browser storage or personal financial profile. Reset and reload clear review data. A deliberately downloaded report is a separate file controlled by the user.
+## Actual Team 6 conditions and implementation mapping
+Source: BLUEPRINT_team6_W10.pdf, supplied 18 October 2026, Step 5 and Step 7. Original remains unchanged.
+
+1. Buyer writes the rules. Budget and measures are editable; no labels, happiness score or automatic changes.
+2. Unknown never clears. Delivery, returns, other debts/next quincena and full fit remain explicit unknowns until the user records a review. The result says "No puedo determinarlo" when any are missing, even if another known conflict exists. Width remains the only numeric fit check; other dimensions/access are user attestations, not external verification.
+3. Shadow clause. No sellers, lenders, sponsors, paid placement, commissions or credit recommendations. No employer receives individual data. There is no reporting endpoint at all. Any future aggregate-only funder report must enforce groups of at least 50; not implemented or claimed today.
+4. No veto/pressure. Equally styled buy/change/wait choices record only a local decision. No purchase is made. No urgency, countdown or scarcity copy.
+5. Minimal data. Voluntary opt-in, synthetic examples, runtime memory, reset and user-initiated local download. No bank access, backend, database, analytics or employer feed.
+6. Evidence before claims. The manual checklist is the proposed baseline. Pilot threshold: at least 3 of 5 real buyers find concrete help; fewer than 3 stops that version; two failed tests end it. No real pilot or reduced regret/returns/arrears is claimed. Node tests are not those real-buyer tests.
+
+## Scope and team boundaries
+The six-quincena payday map belongs to Emilio. This slice asks whether the shopper reviewed other obligations and adjusted the declared limit; it does not reconstruct debts, verify bank data or calculate affordability. Cristina's aggregation work and Isabella's clothing pilot are not claimed as features of this build. The employer is a candidate payer, not a committed customer.
 
 ## Technology honestly
 This slice uses deterministic browser code, not a live AI agent or vision model. It cannot extract dimensions or prices from an image, establish a product's quality, read a bank account, verify a retailer quote or observe future regret. A file/image upload that does nothing would misrepresent vision, so it is cut. A future vision proposal must return field-level source crops, allow correction, abstain on unreadable fields and test against manual entry before shipping. The Week 10 mockup is AI-generated; that does not make the application inference AI-powered.
