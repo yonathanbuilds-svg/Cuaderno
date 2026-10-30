@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {review,cents} from '../src/engine.js';
+const full={item:'Sofá de prueba',base:'14600',delivery:'800',assembly:'600',other:'0',limit:'16000'};
+test('Known total equals declared limit without recommending purchase',()=>{const r=review(full);assert.equal(r.total,1600000);assert.equal(r.delta,0);assert.equal(r.status,'within');});
+test('Unknown delivery never becomes zero or final total',()=>{const r=review({...full,delivery:''});assert.equal(r.total,null);assert.equal(r.complete,false);assert.equal(r.knownSubtotal,1520000);assert.equal(r.delta,null);assert.equal(r.missing[0].field,'delivery');});
+test('Explicit zero is distinct from blank',()=>{assert.equal(cents('0'),0);assert.equal(cents(''),null);assert.equal(cents('  '),null);});
+test('Incomplete quote can already exceed the limit',()=>{const r=review({...full,delivery:'',limit:'15000'});assert.equal(r.lowerBoundOver,true);assert.equal(r.total,null);});
+test('Optional limit is not fabricated',()=>{const r=review({...full,limit:''});assert.equal(r.status,'no-limit');assert.equal(r.delta,null);});
+test('All missing fields get actionable questions',()=>{assert.equal(review({}).missing.length,4);assert.ok(review({}).missing.every(m=>m.question.length>10));});
+test('Decimal cents are exact',()=>{assert.equal(cents('0.29'),29);assert.equal(cents('100.01'),10001);});
+test('Reject invalid, negative, nonfinite and fractional-cent values',()=>{for(const x of ['-1','NaN','Infinity','1e3','1,000','.001','2.999','1000000.01'])assert.throws(()=>cents(x));});
+test('Reject arrays and objects instead of coercing them to amounts',()=>{for(const x of [[],['14600'],{},true])assert.throws(()=>cents(x));});
+test('Bound descriptive text',()=>assert.throws(()=>review({...full,item:'a'.repeat(81)})));
