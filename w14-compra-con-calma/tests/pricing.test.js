@@ -1,0 +1,9 @@
+const test=require('node:test'),assert=require('node:assert/strict');const {DEFAULTS,calculate}=require('../pricing.js');const {calculateQuote}=require('../quote.js');
+test('default projects and subscriptions share the documented price model',()=>{let r=calculate(DEFAULTS);assert.equal(r.householdRevenue,2450);assert.equal(r.professionalRevenue,745);assert.equal(r.gross,3195);assert.equal(r.annual,38340);assert.equal(r.householdPayers,50);assert.equal(r.professionalPayers,5);assert.ok(Math.abs(r.balance-1983.175)<1e-9)});
+test('zero conversion means no payers and fixed cost still applies',()=>{let r=calculate({...DEFAULTS,householdConversion:0,professionalConversion:0});assert.equal(r.gross,0);assert.equal(r.balance,-500)});
+test('zero price produces no artificial revenue',()=>{let r=calculate({...DEFAULTS,householdPrice:0,professionalPrice:0});assert.equal(r.gross,0);assert.equal(r.householdUnit,-10)});
+test('invalid simulation assumptions rejected',()=>{for(const v of ['', '  ',true,-1,Infinity,'abc'])assert.throws(()=>calculate({...DEFAULTS,households:v}));assert.throws(()=>calculate({...DEFAULTS,professionalConversion:101}));assert.throws(()=>calculate({...DEFAULTS,feePercent:101}))});
+test('unknown fees remain outside the final total',()=>{let r=calculateQuote({price:14600});assert.equal(r.total,null);assert.equal(r.charges.delivery,null)});
+test('explicit zero fees allow a complete user-entry sum',()=>{let r=calculateQuote({price:14600,delivery:{known:true,amount:0},assembly:{known:true,amount:0},other:{known:true,amount:0}});assert.equal(r.total,14600)});
+test('a confirmed blank fee cannot become zero',()=>assert.throws(()=>calculateQuote({price:14600,delivery:{known:true,amount:''}})));
+test('quote parser rejects whitespace and boolean amounts',()=>{for(const v of ['   ',true,false])assert.throws(()=>calculateQuote({price:14600,delivery:{known:true,amount:v}}))});

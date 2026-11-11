@@ -1,0 +1,7 @@
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;root.Pricing=api})(typeof globalThis!=='undefined'?globalThis:this,function(){
+ 'use strict';
+ const DEFAULTS={households:1000,householdConversion:5,householdPrice:49,professionals:100,professionalConversion:5,professionalPrice:149,feePercent:3.5,householdSupport:10,professionalSupport:20,fixed:500};
+ function number(v,key,max=100000000){if(typeof v==='boolean'||v===null||v===undefined||String(v).trim()==='')throw Error('Completa '+key+' con una cifra.');const n=Number(v);if(!Number.isFinite(n)||n<0||n>max)throw Error(key+': usa un número entre 0 y '+max+'.');return n}
+ function calculate(input){const d={};for(const k of Object.keys(DEFAULTS))d[k]=number(input[k],k,/Conversion|Percent/.test(k)?100:100000000);const hp=d.households*d.householdConversion/100,pp=d.professionals*d.professionalConversion/100;const hr=hp*d.householdPrice,pr=pp*d.professionalPrice,gross=hr+pr,fees=gross*d.feePercent/100,support=hp*d.householdSupport+pp*d.professionalSupport,contribution=gross-fees-support;return{inputs:d,householdPayers:hp,professionalPayers:pp,householdRevenue:hr,professionalRevenue:pr,gross,annual:gross*12,fees,support,contribution,fixed:d.fixed,balance:contribution-d.fixed,householdUnit:d.householdPrice*(1-d.feePercent/100)-d.householdSupport,professionalUnit:d.professionalPrice*(1-d.feePercent/100)-d.professionalSupport}}
+ return{DEFAULTS,calculate};
+});
