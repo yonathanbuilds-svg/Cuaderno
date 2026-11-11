@@ -1,0 +1,11 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const {calculateQuote}=require('../quote.js');
+const all=(delivery,assembly,other)=>({price:14600,delivery:{known:true,amount:delivery},assembly:{known:true,amount:assembly},other:{known:true,amount:other}});
+test('unknown charges are not zero',()=>{const r=calculateQuote({price:14600});assert.equal(r.total,null);assert.deepEqual(r.pending,['delivery','assembly','other'])});
+test('confirmed zero is valid',()=>{const r=calculateQuote(all(0,0,0));assert.equal(r.total,14600)});
+test('known charges sum correctly',()=>{assert.equal(calculateQuote(all(650,1200,250)).total,16700)});
+test('cents are handled',()=>{assert.equal(calculateQuote(all(10.10,0.20,0)).total,14610.3)});
+test('negative charges rejected',()=>{assert.throws(()=>calculateQuote(all(-1,0,0)),/nonnegative/)});
+test('bad price rejected',()=>{assert.throws(()=>calculateQuote({...all(0,0,0),price:'abc'}),/nonnegative/)});
+test('unconfirmed amount never enters subtotal',()=>{const r=calculateQuote({...all(100,0,0),other:{known:false,amount:999}});assert.equal(r.total,null);assert.equal(r.knownSubtotal,14700)});
