@@ -1,0 +1,3 @@
+const test=require('node:test');const assert=require('node:assert/strict');const {sampleFor}=require('../campaign.js');const Q=require('../quote.js');
+test('B1 has the same known subtotal and unknowns as the campaign',()=>{const s=sampleFor('b1');const r=Q.calculateQuote({price:s.price,delivery:{known:true,amount:s.delivery},assembly:{known:false,amount:''},other:{known:false,amount:''}});assert.equal(r.knownSubtotal,15300);assert.equal(r.total,null);assert.deepEqual(r.pending,['assembly','other']);});
+test('unrecognized source cannot inject custom quote values',()=>{for(const x of ['',null,undefined,'a1','c1','<script>','b1&price=0','b1'.repeat(1000)])assert.equal(sampleFor(x),null);const s=sampleFor('b1');s.price=0;assert.equal(sampleFor('b1').price,14600);});
