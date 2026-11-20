@@ -1,3 +1,8 @@
+# Current sprint: Week 15 - Distribution
+Current specification, launch playbook, source boundaries and final release: [W15_PACKET.md](W15_PACKET.md). Current verification: [TEST_LOG_W15.md](TEST_LOG_W15.md). The Week 15 specification was committed before implementation (remote commit 3e9d8eeddee34eb986d5650b626d54e96b673e52). The earlier Week 14 packet follows as retained history; the uploaded Week 15 instructions supersede its paid-domain requirement.
+
+---
+
 # Week 14 - Compra con Calma: pricing before confidence
 Yonathan Zeitoune Mattout | Team 6 | Adversary | 10 November 2026
 

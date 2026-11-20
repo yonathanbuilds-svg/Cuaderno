@@ -94,3 +94,11 @@ Charter: w12-compra-con-calma/docs/CHARTER.md. Manifesto: manifiesto.md. Prior p
 - https://www.gob.mx/profeco/documentos/muebles-de-linea-y-sobre-medida-87444 (official indexed text available; direct fetch returned 403)
 
 The real 40+ minute Brain exchange, complete original conversation exports, Team Fusion and Blueprint, live audience test, student demo and on-camera reflection cannot be inferred from this packet. Their absence must remain visible in final delivery status.
+
+
+## Final Week 15 release and remaining gates
+Working evaluator route: https://compra-con-calma-w14.vercel.app/guia
+Repository: https://github.com/yonathanbuilds-svg/Cuaderno/tree/main/w14-compra-con-calma
+Production deployment: dpl_FQAWQuW5ajY6j7iduEJecGdadj9R, READY; executable source e82efaaf9c6a76eda646ebd9c26b0813a01da8cd. Subsequent repository updates document verification only. Seventeen code tests passed; live browser quote/blank/zero/reset and copy checks passed; three downloadable files returned identical reviewed bytes. See TEST_LOG_W15.md for the complete observed record.
+
+The live guide now completes the mechanical content-to-review path. This is a release result, not an audience experiment. Invitations have not been sent, response has not been observed, and a zero-response result is not claimed. The camera-on personal reflection, demo, real Team Fusion/Blueprint, fresh-chat persona test and full original Brain/build exchanges still require their actual evidence.

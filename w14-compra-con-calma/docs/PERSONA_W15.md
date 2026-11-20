@@ -1,5 +1,5 @@
 # Week 15 persona review preparation
-Status: synthetic desk review and walkthrough protocol; not a completed fresh-chat screenshot persona test or a real audience session.
+Status: screenshot-informed synthetic desk review and walkthrough protocol. The assistant inspected the actual live screens; a separate fresh-chat persona exchange and real audience session remain incomplete.
 
 ## Research-grounded synthetic persona
 Lucia is an invented Spanish-speaking CDMX household buyer comparing a sofa quote before an advance payment. Her need to check freight/installation and written terms is grounded in PROFECO's official furniture guidance. Her age, income, device preference, psychological traits and willingness to pay have not been researched; none are asserted. A synthetic persona is not a recruited buyer.
@@ -14,6 +14,6 @@ Provide the current screenshot of /guia, the B1 result screen and the campaign a
 4. Risk: the revisor's initial 14,600 default conflicts with the B1 campaign's 15,300. New fixed campaign sample passes 700 delivery with the example link; the deterministic test confirms 15,300 and two pending charges.
 
 ## Execution boundary
-Local browser preview was attempted at localhost:8765 and the separate browser reported connection refused; no rendered-screen persona observation was obtained. The local quote-engine tests pass, but do not establish comprehension. Publishing and live browser review remain pending user approval. No quote, attendee, buyer feedback, conversion or confusion is invented.
+The initial local browser preview could not connect. After explicit publication authorization, the live guide was inspected in the browser: hero and three cards were legible; B1 showed 15,300 with two unknown charges; confirmed blank removed the result and disabled Copy; explicit 0 restored the subtotal while Other remained pending. These are screen and behavior observations, not quotations from Lucia or any real buyer. No fresh-chat simulated interview or human comprehension result is claimed. No quote, attendee, buyer feedback, conversion or confusion is invented.
 
 Source: https://www.gob.mx/profeco/documentos/muebles-de-linea-y-sobre-medida-87444 (official indexed text retrieved 20 November 2026; direct fetch returned 403). Current instructions: w15_ship.html, supplied in this conversation.

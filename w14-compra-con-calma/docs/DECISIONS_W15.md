@@ -10,3 +10,6 @@
 - Keep campaign outreach voluntary and subject to Yonathan's approval. No messages have been sent.
 - Preserve source commits and actual deployments. Make no artificial bug, engagement or attendance evidence.
 - Next move: verify the release, ask Yonathan to challenge the proposed audience, and run the opt-in audience test plus real Team session.
+
+
+Publication close: user explicitly authorized GitHub/Vercel publication. The guide is now live and browser checks passed. Keep the public claim boundary and the opt-in test plan. No outreach was sent; no engagement was invented. The binding remaining evidence gaps are the actual audience test, original conversation exports and human session/videos.
