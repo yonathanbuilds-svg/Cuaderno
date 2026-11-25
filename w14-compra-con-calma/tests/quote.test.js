@@ -9,3 +9,10 @@ test('cents are handled',()=>{assert.equal(calculateQuote(all(10.10,0.20,0)).tot
 test('negative charges rejected',()=>{assert.throws(()=>calculateQuote(all(-1,0,0)),/nonnegative/)});
 test('bad price rejected',()=>{assert.throws(()=>calculateQuote({...all(0,0,0),price:'abc'}),/nonnegative/)});
 test('unconfirmed amount never enters subtotal',()=>{const r=calculateQuote({...all(100,0,0),other:{known:false,amount:999}});assert.equal(r.total,null);assert.equal(r.knownSubtotal,14700)});
+
+test('rejects oversized values before rounding, preserves the inclusive cent limit', () => {
+  const { MAX_CHARGE } = require('../quote.js');
+  assert.throws(() => calculateQuote({ price: '1e307' }), /no greater/);
+  assert.throws(() => calculateQuote(all(MAX_CHARGE + 0.01, 0, 0)), /no greater/);
+  assert.equal(calculateQuote(all(MAX_CHARGE, MAX_CHARGE, MAX_CHARGE)).total, 3000014599.97);
+});

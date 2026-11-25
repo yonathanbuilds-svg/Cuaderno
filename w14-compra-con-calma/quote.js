@@ -5,10 +5,14 @@
   root.QuoteEngine = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function() {
   const COST_FIELDS = ['delivery', 'assembly', 'other'];
+  const MAX_CHARGE = 999999999.99;
   function numeric(x, label) {
     if (typeof x === 'boolean' || x === null || x === undefined || String(x).trim() === '') throw new Error(label + ' must be provided');
+    if (typeof x !== 'string' && typeof x !== 'number') throw new Error(label + ' must be a number');
     const n = Number(x);
-    if (!Number.isFinite(n) || n < 0) throw new Error(label + ' must be a nonnegative number');
+    if (!Number.isFinite(n) || n < 0 || n > MAX_CHARGE) {
+      throw new Error(label + ' must be a nonnegative finite number no greater than ' + MAX_CHARGE);
+    }
     return Math.round((n + Number.EPSILON) * 100) / 100;
   }
   function calculateQuote(data) {
@@ -33,5 +37,5 @@
       completeness: pending.length === 0 ? 'complete' : 'incomplete',
       caution: pending.length === 0 ? 'All entered charges are marked known; verify with seller.' : 'Not a final total: some charges remain unknown.' };
   }
-  return { calculateQuote, COST_FIELDS };
+  return { calculateQuote, COST_FIELDS, MAX_CHARGE };
 });
